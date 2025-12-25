@@ -1,6 +1,6 @@
-# AKAME BOT
+# MIKU BOT
 
-![أكامي بوت](https://i.postimg.cc/xjZgQwSL/1730939819791.jpg)
+![أكامي بوت]([https://i.ibb.co/whBF6Y6x/9029a2eafc1b93fdb11241b57ba56d38.jpg]))
 <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="500">
 <br><br>
 
