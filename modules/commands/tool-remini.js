@@ -23,7 +23,7 @@ module.exports.run = async function({ api, event, args }) {
     api.sendMessage("⏳ | جاري تحسين جودة الصورة، يرجى الانتظار...", event.threadID, event.messageID);
     
     // استخدام الرابط الجديد لتحسين جودة الصورة
-    const response = await axios.get(`https://rapido.zetsu.xyz/api/upscale-image?imageUrl=${encodeURIComponent(linkUp)}`);
+    const response = await axios.get(`https://rapido.zetsu.xyz/api/upscale-image?imageUrl=${encodeURIComponent(linkUp)}&apikey=rapi_57d3c961fe064b9d8118a8b00ad4d49b`);
     
     // التحقق من بنية البيانات الجديدة
     if (!response.data || !response.data.resultImageUrl) {
