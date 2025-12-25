@@ -23,18 +23,23 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
     });
 
     // استخدام رابط التحميل الجديد
-    const response = await axios.get(`https://apis-keith.vercel.app/download/video?url=${encodeURIComponent(videoUrl)}`);
+    const response = await axios.get(`https://nayan-video-downloader.vercel.app/ytdown?url=${encodeURIComponent(videoUrl)}`);
     
     // التحقق من بنية البيانات الجديدة
-    if (!response.data.status || !response.data.result) {
-      throw new Error("لم يتم العثور على رابط تحميل في الاستجابة");
+    if (!response.data.status || !response.data.data) {
+      throw new Error("لم يتم العثور على رابط تحميل في الاستجابة من الخادم الجديد");
     }
     
-    const downloadLink = response.data.result;
+    // استخدام الرابط من البنية الجديدة
+    const downloadLink = response.data.data.video || response.data.data.video_hd;
+
+    if (!downloadLink) {
+      throw new Error("لم يتم العثور على رابط فيديو للتحميل");
+    }
 
     const filePath = `${__dirname}/cache/video_${Date.now()}.mp4`;
 
-    // Download the video using the direct link
+    // تنزيل الفيديو باستخدام الرابط المباشر
     const videoStream = await axios({
       url: downloadLink,
       method: "GET",
