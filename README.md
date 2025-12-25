@@ -1,6 +1,6 @@
 # MIKU BOT
 
-![أكامي بوت]
+
 <p align="center">
 <img src="https://i.ibb.co/whBF6Y6x/9029a2eafc1b93fdb11241b57ba56d38.jpg"/>
 </p>
